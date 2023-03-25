@@ -1,0 +1,23 @@
+‘create-react-app’ is not recognized as an internal or 
+external command OR The term ‘create-react-app’ is not recognized
+https://asheroto.medium.com/create-react-app-is-not-recognized-as-an-internal-or-external-command-or-the-term-60caea592d5a
+
+Do npm and npx work?
+In Command Prompt or PowerShell, type:
+npm and press enter
+npx and press enter
+Is create-react-app actually installed?
+Make sure create-react-app is installed.
+
+In Command Prompt or PowerShell, type:
+
+npm install --global create-react-app
+
+Once it’s installed, type create-react-app and press enter.
+
+If it’s still broken, there’s probably only one reason it’s not working: missing folder in the PATH variable
+After installing, makdir backend, cd backend and run the steps below;
+
+npm i -y
+npm install express cors mangoose dotenv
+cors stands for - "cross origin resource sharing;
