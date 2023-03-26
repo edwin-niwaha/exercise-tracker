@@ -9,6 +9,7 @@ const userSchema = new Schema({
         trim: true,
         minlength: 3,
     },
+    emailId: { type: String, required: true},
 }, { timestamps: true });
 
 export default mongoose.model('User', userSchema);
