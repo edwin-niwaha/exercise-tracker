@@ -21,3 +21,11 @@ After installing, makdir backend, cd backend and run the steps below;
 npm i -y
 npm install express cors mangoose dotenv
 cors stands for - "cross origin resource sharing;
+
+//.gitignore to igore files
+git rm --cached .env
+
+db conn
+PORT = 5000
+DB_URI = mongodb+srv://mernstack_123:RL8QyJW4tFSYxWg7@cluster0.j9jxc8q.mongodb.net/?retryWrites=true&w=majority
+# DB_URI = mongodb://127.0.0.1:27017/mern_db
