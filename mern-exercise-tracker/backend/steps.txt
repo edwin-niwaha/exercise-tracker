@@ -1,3 +1,5 @@
+# backend
+::::::::::::::::::::::::::::::
 ‘create-react-app’ is not recognized as an internal or 
 external command OR The term ‘create-react-app’ is not recognized
 https://asheroto.medium.com/create-react-app-is-not-recognized-as-an-internal-or-external-command-or-the-term-60caea592d5a
@@ -29,3 +31,11 @@ db conn
 PORT = 5000
 DB_URI = mongodb+srv://mernstack_123:RL8QyJW4tFSYxWg7@cluster0.j9jxc8q.mongodb.net/?retryWrites=true&w=majority
 # DB_URI = mongodb://127.0.0.1:27017/mern_db
+
+# front end
+:::::::::::::::::::::::::::::::::
+public folder
+src folder
+
+npm install bootstrap in the root directory
+npm install react-router-dom
