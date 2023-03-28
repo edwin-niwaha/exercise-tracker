@@ -1,7 +1,9 @@
+import React, { Component } from "react";
 import { Link } from "react-router-dom";
-
-const Navbar = () => {
-  return ( <nav className="navbar navbar-dark bg-dark navbar-expand-lg">
+export default class Navbar extends Component {
+  render() {
+    return (
+      <nav className="navbar navbar-dark bg-dark navbar-expand-lg">
         <Link to="/" className="navbar-brand">
           ExcerTracker
         </Link>
@@ -13,12 +15,12 @@ const Navbar = () => {
               </Link>
             </li>
             <li className="navbar-item">
-              <Link to="/" className="nav-link">
-                Create Exercise
+              <Link to="/create" className="nav-link">
+                Create Exercise Log
               </Link>
             </li>
             <li className="navbar-item">
-              <Link to="/" className="nav-link">
+              <Link to="/user" className="nav-link">
                 Create User
               </Link>
             </li>
@@ -27,5 +29,4 @@ const Navbar = () => {
       </nav>
     );
   }
-
-export default Navbar;
+}
