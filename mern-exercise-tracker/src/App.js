@@ -1,23 +1,24 @@
 import React from "react";
-import { BrowserRouter as Router, Route } from "react-router-dom";
-import "bootstrap/dist/css/bootstrap.min.css";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 
-import Navbar from "./components/navbar.component.js";
-import ExerciseList from "./components/exercise-list.component.js";
-import EditExercise from "./components/edit-exercise.component.js";
-import CreateExercise from "./components/create-exercise.component.js";
-import CreateUser from "./components/create-user.component.js";
+import Navbar from "./components/navbar.js";
+import ExerciseList from "./components/exercise-list.js";
+import EditExercise from "./components/edit-exercise.js";
+import CreateExercise from "./components/create-exercise.js";
+import CreateUser from "./components/create-user.js";
 
 function App() {
   return (
-    <Router>
+    <BrowserRouter>
       <Navbar />
-      <br />
-      <Route path="/" exact component={ExerciseList} />
-      <Route path="/edit/:id" component={EditExercise} />
-      <Route path="/create" component={CreateExercise} />
-      <Route path="/user" component={CreateUser} />
-    </Router>
+        <br />
+      <Routes>
+        <Route path="/" exact component={ExerciseList} />
+        <Route path="/edit/:id" component={EditExercise} />
+        <Route path="/create" component={CreateExercise} />
+        <Route path="/user" component={CreateUser} />
+      </Routes>
+    </BrowserRouter>
   );
 }
 
