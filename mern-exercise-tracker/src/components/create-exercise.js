@@ -1,6 +1,7 @@
 import React, { Component } from "react";
-/* Exporting the class CreateExercise to be used in another file. */
-export default class CreateExercise extends Component {
+import DatePicker from "react-datepicker";
+import "react-datepicker/dist/react-datepicker.css";
+class CreateExercise extends Component {
   /* A constructor function that is called when a new instance of the class is created. */
   constructor(props) {
     super(props);
@@ -59,13 +60,74 @@ export default class CreateExercise extends Component {
 
     window.location = "/";
   }
-
   /* A function that is called when the component is rendered. */
   render() {
     return (
-      <div>
-        <p>You are welcome Create Exercise</p>
-      </div>
+      <form onSubmit={this.handleSubmit}>
+        <h3>Create New Exrecise Log</h3>
+
+        <div className="form-group">
+          <label>Username</label>
+          <select
+            ref="uerInput"
+            required
+            className="form-control"
+            value={this.state.username}
+            onChange={this.onchangeUsername}
+          >
+            {
+              /* Mapping the users array to the select element. */
+              this.state.users.map(function (user) {
+                return (
+                  <option key={user} value={user}>
+                    {user}
+                  </option>
+                );
+              })
+            }
+          </select>
+        </div>
+
+        <div className="form-group">
+          <label>Description</label>
+          <input
+            type="text"
+            required
+            className="form-control"
+            value={this.state.description}
+            onChange={this.onchangeDescription}
+          />
+        </div>
+
+        <div className="form-group">
+          <label>Duration (in minutes):</label>
+          <input
+            type="text"
+            className="form-control"
+            value={this.state.duration}
+            onChange={this.onchangeDuration}
+          />
+        </div>
+
+        <div className="form-group">
+          <label>Date:</label>
+          <input
+            type="date"
+            className="form-control"
+            value={this.state.date}
+            onChange={this.onchangeDate}
+          />
+        </div>
+
+        <div className="form-group">
+          <input
+            type="submit"
+            className="btn btn-primary"
+            value="Create Exercise Log"
+          />
+        </div>
+      </form>
     );
   }
 }
+export default CreateExercise;
