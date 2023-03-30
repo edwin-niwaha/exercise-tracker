@@ -1,6 +1,6 @@
 import React, { Component } from "react";
-import DatePicker from "react-datepicker";
-import "react-datepicker/dist/react-datepicker.css";
+// import DatePicker from "react-datepicker";
+// import "react-datepicker/dist/react-datepicker.css";
 class CreateExercise extends Component {
   /* A constructor function that is called when a new instance of the class is created. */
   constructor(props) {
@@ -9,14 +9,14 @@ class CreateExercise extends Component {
     this.onchangeUsername = this.onchangeUsername.bind(this);
     this.onchangeDescription = this.onchangeDescription.bind(this);
     this.onchangeDuration = this.onchangeDuration.bind(this);
-    this.onchangeDate = this.onchangeDate.bind(this);
+    // this.onchangeDate = this.onchangeDate.bind(this);
     this.onSubmit = this.onSubmit.bind(this);
 
     this.state = {
       username: "",
       description: "",
       duration: "",
-      date: new Date(),
+      // date: new Date(),
       users: [],
     };
   }
@@ -41,11 +41,11 @@ class CreateExercise extends Component {
     this.setState({ duration: e.target.value });
   }
 
-  onchangeDate(date) {
-    this.setState({
-      date: date,
-    });
-  }
+  // onchangeDate(date) {
+  //   this.setState({
+  //     date: date,
+  //   });
+  // }
 
   /* A function that is called when the form is submitted. */
   onSubmit(e) {
@@ -54,7 +54,7 @@ class CreateExercise extends Component {
       username: this.state.username,
       description: this.state.description,
       duration: this.state.duration,
-      date: this.state.date,
+      // date: this.state.date,
     };
     console.log(exercise);
 
@@ -109,7 +109,7 @@ class CreateExercise extends Component {
           />
         </div>
 
-        <div className="form-group">
+        {/* <div className="form-group">
           <label>Date:</label>
           <input
             type="date"
@@ -117,9 +117,9 @@ class CreateExercise extends Component {
             value={this.state.date}
             onChange={this.onchangeDate}
           />
-        </div>
-
+        </div> */}
         <div className="form-group">
+          <br />
           <input
             type="submit"
             className="btn btn-primary"
