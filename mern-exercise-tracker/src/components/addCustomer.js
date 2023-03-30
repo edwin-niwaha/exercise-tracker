@@ -1,7 +1,7 @@
 import React, { Component } from "react";
-
+// import axios from "axios";
 const customStyle = {
-  width: "250px",
+  width: "100%",
   margin: "0 auto",
   padding: "10px",
   align: "centre",
@@ -22,14 +22,19 @@ class addCustomer extends Component {
     event.preventDefault();
     const { customerName, customerGender, Amount, LoanTenure } = this.state;
     const formValues = {
-      name: customerName,
+      c_name: customerName,
       gender: customerGender,
       amount: Amount,
       loanTenure: LoanTenure,
     };
 
     console.log(formValues);
-    fetch("/api/addCustomer", {
+
+    // axios
+    //   .post("http://localhost:5000/customers/add", Customer)
+    //   .then((res) => console.log(res.data));
+
+    fetch("http://localhost:5000/customers/add", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -54,64 +59,72 @@ class addCustomer extends Component {
 
   render() {
     return (
-      <div className="form-group">
-        <form style={customStyle}>
-        <h3>Customer Reg.</h3>
+      <form style={customStyle}>
+        <div className="form-group">
+          <h3>Customer Reg.</h3>
           <label>
             {" "}
             Name
             <input
               name="customerName"
+              required
               type="text"
               className="form-control"
               value={this.state.customerName}
               onChange={this.handleCustomerNameChange}
             />
           </label>
-          <br />
+        </div>
+        <div className="form-group">
           <label>
             {" "}
             Gender{" "}
             <input
               name="customerGender"
+              required
               type="text"
               className="form-control"
               value={this.state.customerGender}
               onChange={this.handleCustomerGenderChange}
             />{" "}
           </label>
-          <br />
+        </div>
+        <div className="form-group">
           <label>
             {" "}
             Amount{" "}
             <input
-              name="customerGender"
+              name="Amount"
               type="text"
               className="form-control"
               value={this.state.Amount}
               onChange={this.handleCustomerAmountChange}
             />{" "}
           </label>
-          <br />
+        </div>
+        <div className="form-group">
           <label>
             {" "}
             LoanTenure
             <input
-              name="customerGender"
+              name="LoanTenure"
               type="text"
               className="form-control"
               value={this.state.LoanTenure}
               onChange={this.handleCustomerLoanTenureChange}
             />{" "}
           </label>
-          <br /><br />
-          <button type="button" 
-          className="btn btn-primary"
-          onClick={this.onClickAdd}>
+        </div>
+        <div className="form-group">
+          <button
+            type="button"
+            className="btn btn-primary"
+            onClick={this.onClickAdd}
+          >
             Add Customer
           </button>
-        </form>
-      </div>
+        </div>
+      </form>
     );
   }
 }

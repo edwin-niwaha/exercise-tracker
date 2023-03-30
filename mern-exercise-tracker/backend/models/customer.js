@@ -3,7 +3,10 @@ const Schema = mongoose.Schema;
 
 const customerSchema = new Schema(
   {
-    c_name: String,
+    c_name: {
+      type: String,
+      required: true,
+    },
     gender: String,
     amount: Number,
     loanTenure: Number,

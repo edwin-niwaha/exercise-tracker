@@ -49,3 +49,6 @@ npm install webpack -g
 
 In V6, you can't use the component prop anymore. It was replaced in favor of element:
 https://stackoverflow.com/questions/69854011/matched-leaf-route-at-location-does-not-have-an-element
+
+Connecting the front end to the back end
+npm i axios in the fron end folder
